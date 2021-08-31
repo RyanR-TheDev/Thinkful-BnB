@@ -1,33 +1,12 @@
 /* -------  General Styles ------- */
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+}
 
 body {
   font-family: "Lato", sans-serif;
-}
-
-header h1 {
-  text-align: center;
-  margin: 0;
-  padding-top: 20px;
-}
-
-header nav {
-  display: flex;
-  justify-content: center;
-}
-
-header nav ul {
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  margin: 0 20px 0 0;
-}
-
-header nav ul li:last-child a {
-  margin-right: 0;
 }
 
 h2 {
@@ -60,22 +39,16 @@ main img {
   width: 100px;
 }
 
-
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
 }
+
 .group img {
   width: 100%;
 }
-
-
-.center {
-  align-items: center;
-}
-
 
 .item {
   flex: 1;
@@ -96,12 +69,17 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
+  /* Font size for logo appears to be too large for smaller screens, but was not told to touch it */
   font-size: 72px;
   color: #fff;
 }
 
 header nav ul {
-  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+  padding-bottom: 20px;
 }
 
 header nav ul li {
@@ -123,6 +101,13 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  max-width: 100%;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7px;
 }
 
 form label {
@@ -144,11 +129,6 @@ form button {
   width: 100%;
 }
 
-div {
-  text-align: center;
-  
-}
-
 /* -------  Footer ------- */
 
 footer {
@@ -162,38 +142,47 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-
 @media all and (min-width: 480px) {
-  section,
-  h1 {
-    padding: 0 10%;
+  header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  header nav ul {
+    padding-top: 14px;
   }
 
-  header {
+  form {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0px 30px;
   }
-  header h1 {
-    margin: 14px 0;
-    padding-top: 0;
+
+  form div {
+    display: flex;
+    flex-direction: column;
   }
-  header nav {
-    margin-top: 8px;
-  }
+
   .group {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .grid {
-    display: flex;
-    flex-direction: column;
-  }
+
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+
   .grid-top {
     display: flex;
   }
-  .grid-bottom{
+
+  .grid-bottom {
     display: flex;
   }
+
+  
 }
